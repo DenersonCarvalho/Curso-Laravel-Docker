@@ -36,10 +36,16 @@ class UsersController extends Controller
     public function store(Request $request)
     {
             //dd($request->all());
-            $user = new User;
+            /*$user = new User;
             $user->name = $request->name;
             $user->email = $request->email;
             $user->password = $request->password;
-            $user->save();
+            $user->save();*/
+            //User::create($request->all());
+            
+            $data = $request->all();
+            $data['password'] = bcrypt($request->password);
+            User::create($data);
+            return redirect()-route('users.index');
     }
 }
