@@ -1,10 +1,12 @@
-@extends('layouts.app')
-@section('title', 'Listagem')
+@extends('layout.app')
+@section('title','Detalhes')
 @section('content')
-<h1>Lista de Usuários</h1>
+
+<h1> Detalhes de usuário </h1>
 <ul>
-    <li>
-        {{$user->name}} - {{$user->email}} - {{$user->created_at}} 
-    </li>
+<li>{{$user->name}} </li>
+<li>{{$user->email}}</li>
+<li>{{$user->created_at}}</li>
 </ul>
+
 @endsection
